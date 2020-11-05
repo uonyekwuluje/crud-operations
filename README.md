@@ -7,3 +7,7 @@ This repository is a collection of solutions for CRUD tasks in basic application
 <br>
 These functions are necessary to implement a persistent storage application. Persistent storage could be a text file, relational database, non-relational database etc.
 I will include the infrastructure, code base and all CI related tasks and operations in this repository 
+
+### Backend Infrastructure
+We will be using Google Cloud for our backend infrastruture. See 
+* [Terraform Code](infrastructure)

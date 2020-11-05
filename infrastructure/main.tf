@@ -31,11 +31,23 @@ module "pub_vm" {
   server_name           = var.public_facing_servers
   network_self_link     = module.vpc.vpc_id
   env_preffix           = var.env_preffix
+  username              = var.username
   subnet_id             = module.vpc.public_subnet1_id
 }
 output "pub_vm_pubip" {
   value = module.pub_vm.public_ip
 }
+
+
+
+module "kubernetes" {
+  source                = "./modules/google-kubernetes"
+  project_id            = var.var_project
+  cluster_name          = var.kubernetes_cluster_name
+  kubernetes_version    = var.kubernetes_version
+}
+
+
 
 
 
@@ -46,3 +58,4 @@ output "pub_vm_pubip" {
 #  subnet_id             = module.vpc.public_subnet1_id
 #  region                = var.region_name
 #}
+

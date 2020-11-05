@@ -1,3 +1,10 @@
+variable "network_self_link" {} 
+variable "env_preffix" {}
+variable "subnet_id" {}
+variable "server_name" {}
+variable "username" {}
+
+
 resource "google_compute_instance" "default" {
   for_each      = toset(var.server_name)
   name          = lower(each.key)
@@ -11,7 +18,7 @@ resource "google_compute_instance" "default" {
   }
 
   metadata = {
-    sshKeys = "ucheonyekwuluje:${file("~/.ssh/id_rsa.pub")}"
+    sshKeys = "${var.username}:${file("~/.ssh/id_rsa.pub")}"
   }
 
   network_interface {

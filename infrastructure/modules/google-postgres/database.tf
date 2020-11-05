@@ -1,3 +1,9 @@
+variable "network_self_link" {} 
+variable "env_preffix" {}
+variable "subnet_id" {}
+variable "region" {}
+
+
 resource "google_sql_database_instance" "master_db" {
   name             = "psqldbinstance"
   database_version = "POSTGRES_11"

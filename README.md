@@ -14,4 +14,4 @@ This is a Springboot Application. Visit [Spring Initializer](https://start.sprin
 ### Backend Infrastructure
 We will be using Google Cloud for our backend infrastruture. See 
 * [Terraform Code](infrastructure)
-* [Java Crud Application](Java-Application)
+* [Java Crud Application](Java-Spring-Application)

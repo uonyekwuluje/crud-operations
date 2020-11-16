@@ -10,6 +10,7 @@ https://start.spring.io/
 ## Build Project
 Build the project:
 ```
+mvn dependency:tree
 mvn spring-boot:run
 ```
 

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student From Data</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+   <div class="container h-100 d-flex justify-content-center">
+      <div class="jumbotron my-auto">
+         <h4 class="display-4">Student Form Data</h4>
+         <div class="alert alert-success" role="alert">
+           <h1>Student Data</h1>
+              <p th:text="'Student First Name: ' + ${student.studentfname}" />
+              <p th:text="'Student Last Name: ' + ${student.studentlname}" />
+              <p th:text="'Student Grade: ' + ${student.studentgrade}" />
+              <a href="/create">Submit Another Student</a>
+         </div>
+      </div>
+   </div>
+
+</body>
+</html>

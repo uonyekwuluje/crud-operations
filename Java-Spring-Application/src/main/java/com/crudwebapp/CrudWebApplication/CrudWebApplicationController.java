@@ -10,18 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class CrudWebApplicationController {
 
-	/*@GetMapping("/create")
-	public String showForm(Model model) {
-            model.addAttribute("create", new Student());
-	    return "create";
-	}
-        
-        @PostMapping("/create")
-        public String formSubmit(@ModelAttribute Student create, Model model) {
-             model.addAttribute("create", create);
-             return "result";
-        }*/
-
         @GetMapping("/create")
         public String showForm(Model model) {
             model.addAttribute("student", new Student());

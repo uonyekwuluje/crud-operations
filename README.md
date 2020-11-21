@@ -9,9 +9,10 @@ These functions are necessary to implement a persistent storage application. Per
 I will include the infrastructure, code base and all CI related tasks and operations in this repository 
 
 ### Spring Initializer
-This is a Springboot Application. Visit [Spring Initializer](https://start.spring.io/) to create base template
+Visit [Spring Initializer](https://start.spring.io/) to create base template
+* [Java Springboot WebForms](Java-Spring-Webforms): This is a POC using springboot and HTML to capture form data
 
-### Backend Infrastructure
-We will be using Google Cloud for our backend infrastruture. See 
-* [Terraform Code](infrastructure)
-* [Java Crud Application](Java-Spring-Application)
+
+### Python Django
+This is a Django App geared at CRUD concepts
+* [Terraform Code](infrastructure): We will be using Google Cloud for our backend infrastruture. 

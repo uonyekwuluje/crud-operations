@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Create New Record</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+   
+<body>
+<div class="container justify-content-center">
+  <!--Navbar-->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('index') }}">CRUDApp</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ url_for('create_record') }}">Create Record</a></li>
+        <li><a href="{{ url_for('delete_record') }}">Delete Record</a></li>
+        <li><a href="{{ url_for('update_record') }}">Update Record</a></li>
+        <li><a href="{{ url_for('display_record') }}">Display Records</a></li>
+      </ul>
+      <button class="btn btn-info navbar-btn">Help and Information</button>
+    </div>
+  </nav>
+  <!--/.Navbar-->
+
+  <div class="jumbotron text-center">
+    <h2 class="display-5">Create New Record</h2>
+    <div class="intro-content">
+      <p>
+        Placeholder for creating new record.
+      </p>
+    <div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <title>Create New Record</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}" type="text/css">
 </head>
    
 <body>
@@ -17,50 +19,26 @@
         <a class="navbar-brand" href="{{ url_for('index') }}">CRUDApp</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="{{ url_for('create_record') }}">Create Record</a></li>
+        <li class="active"><a href="{{ url_for('create_record') }}">Create Record</a></li>
         <li><a href="{{ url_for('delete_record') }}">Delete Record</a></li>
         <li><a href="{{ url_for('update_record') }}">Update Record</a></li>
-        <li class="active"><a href="{{ url_for('display_record') }}">Display Records</a></li>
+        <li><a href="{{ url_for('display_record') }}">Display Records</a></li>
       </ul>
       <button class="btn btn-info navbar-btn">Help and Information</button>
     </div>
   </nav>
   <!--/.Navbar-->
 
-  <!-- Main Code -->
   <div class="student-form">
     <div class="caption-center">
-      <h2 class="display-5">Display Records</h2>
+      <h2 class="display-5">result of addition : {{ msg }}.</h2>
+      <p>
+        <h2><a href = "\">go back to home page</a></h2>
+      </p>
     </div>
-    <div class="student-table-display">
-       <table border = 1>
-         <thead>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Registration Number</td>
-            <td>Email Address</td>
-            <td>Sex</td>
-            <td>Grade</td>
-         </thead>
-         
-         {% for row in rows %}
-            <tr>
-               <td>{{row["student_fname"]}}</td>
-               <td>{{row["student_lname"]}}</td>
-               <td> {{ row["student_regnum"]}}</td>
-               <td>{{row["student_emailaddress"]}}</td>	
-               <td>{{row["student_sex"]}}</td>	
-               <td>{{row["student_grade"]}}</td>	
-            </tr>
-         {% endfor %}
-       </table>
-    </div>
-   <a href = "/">Go back to home page</a>
   </div>
-  <!-- End of Main Code -->
-
 </div>
 
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/form-validate.js') }}"></script>
 </body>
 </html>

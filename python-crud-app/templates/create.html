@@ -32,30 +32,30 @@
   <div class="student-form">
     <div class="caption-center">
       <h2 class="display-5">Create New Record</h2>
-    </div> 
-    <form>
+    </div>
+    <form name="studentform" action="{{ url_for('addrec') }}" method="POST" onsubmit="return ValidateEmail(document.studentform.student_emailaddress)">
 	 <div class="form-row">
 	   <div class="form-group col-md-6">
-	     <input type="text" class="form-control" placeholder="Student's First name">
+	     <input name="student_fname" type="text" class="form-control" placeholder="Student's First name" required>
 	   </div>
 	   <div class="form-group col-md-6">
-	     <input type="text" class="form-control" placeholder="Student's Last name">
+	     <input name="student_lname" type="text" class="form-control" placeholder="Student's Last name" required>
 	   </div>
          </div>
 
          <div class="form-row">
            <div class="form-group col-md-6">
-             <input type="text" class="form-control" placeholder="Student's Registration Number">
+             <input name="student_regnum" type="text" class="form-control" placeholder="Student's Registration Number" required>
            </div>
            <div class="form-group col-md-6">
-             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+             <input name="student_emailaddress" type="email" class="form-control" placeholder="name@example.com" required>
            </div>
          </div>
 
          <div class="form-row div-center">
            <div class="form-group col-md-4">
              <label for="inputState">Sex</label>
-             <select id="inputState" class="form-control">
+             <select name="student_sex" class="form-control">
                 <option selected>Female</option>
                 <option>Male</option>
                 <option>Trans</option>
@@ -63,7 +63,7 @@
            </div>
            <div class="form-group col-md-4">
              <label for="inputState">Grade</label>
-             <select id="inputState" class="form-control">
+             <select name="student_grade" class="form-control">
                 <option selected>First Grade</option>
                 <option>Second Grade</option>
                 <option>Third Grade</option>
@@ -85,6 +85,6 @@
   </div>
 </div>
 
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/form-validate.js') }}"></script>
 </body>
 </html>

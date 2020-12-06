@@ -31,10 +31,10 @@ def addrec():
             cur.execute("INSERT INTO students (student_fname,student_lname,student_regnum,student_emailaddress,student_sex,student_grade) VALUES (?,?,?,?,?,?)",(student_fname,student_lname,student_regnum,student_emailaddress,student_sex,student_grade))
             
             con.commit()
-            msg = "Record successfully added"
+            msg = "Record Successfully Added"
       except:
          con.rollback()
-         msg = "error in insert operation"
+         msg = "Error in insert operation"
       
       finally:
          return render_template("result.html",msg = msg)
@@ -45,9 +45,76 @@ def addrec():
 def delete_record():
    return render_template("delete.html")
 
+
+@app.route('/delrec', methods = ['POST', 'GET'])
+def delrecord():
+   if request.method == 'POST':
+      try:
+         student_regnum_delete = request.form['student_regnum']
+
+         with sqlite3.connect("database.db") as con:
+            cur = con.cursor()
+            del_command = "DELETE FROM students WHERE student_regnum=?"
+            cur.execute(del_command, (student_regnum_delete,))
+
+            con.commit()
+            msg = "Record Successfully Deleted"
+      except:
+         con.rollback()
+         msg = "error in delete operation"
+
+      finally:
+         return render_template("result.html",msg = msg)
+         con.close()
+   
+
+
+
+
+
 @app.route('/update')
 def update_record():
    return render_template("update.html")
+
+
+@app.route('/updaterec',methods = ['POST', 'GET'])
+def updaterec():
+   if request.method == 'POST':
+      try:
+         student_fname = request.form['student_fname']
+         student_lname = request.form['student_lname']
+         student_regnum = request.form['student_regnum']
+         student_emailaddress = request.form['student_emailaddress']
+         student_sex = request.form['student_sex']
+         student_grade = request.form['student_grade']
+
+         with sqlite3.connect("database.db") as con:
+            cur = con.cursor()
+            update_command = '''UPDATE students 
+                                SET student_fname = ?,
+                                    student_lname = ?,
+                                    student_regnum = ?,
+                                    student_emailaddress = ?,
+                                    student_sex = ?,
+                                    student_grade = ?
+                                WHERE student_regnum = ?
+                             ''' 
+            cur.execute(update_command,(student_fname,student_lname,student_regnum,student_emailaddress,student_sex,student_grade,student_regnum))
+
+            con.commit()
+            msg = "Record Successfully Updated"
+      except:
+         con.rollback()
+         msg = "Error in insert operation"
+
+      finally:
+         return render_template("result.html",msg = msg)
+         con.close()
+
+
+
+
+
 
 @app.route('/display')
 def display_record():

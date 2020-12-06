@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+      <title>Update Record</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}" type="text/css">
 </head>
    
 <body>
@@ -27,19 +29,62 @@
   </nav>
   <!--/.Navbar-->
 
-  <!-- Main Code -->
-  <div class="jumbotron text-center">
-    <h2 class="display-5">Update Record</h2>
-    <div class="intro-content">
-      <p>
-        Placeholder for Updating record.
-      </p>
-    <div>
-  </div>
-  <!-- End of Main Code -->
+  <div class="student-form">
+    <div class="caption-center">
+      <h2 class="display-5">Update Existing Record</h2>
+    </div>
+    <form name="studentform" action="{{ url_for('updaterec') }}" method="POST" onsubmit="return ValidateEmail(document.studentform.student_emailaddress)">
+	 <div class="form-row">
+	   <div class="form-group col-md-6">
+	     <input name="student_fname" type="text" class="form-control" placeholder="Student's First name" required>
+	   </div>
+	   <div class="form-group col-md-6">
+	     <input name="student_lname" type="text" class="form-control" placeholder="Student's Last name" required>
+	   </div>
+         </div>
 
+         <div class="form-row">
+           <div class="form-group col-md-6">
+             <input name="student_regnum" type="text" class="form-control" placeholder="Student's Registration Number" required>
+           </div>
+           <div class="form-group col-md-6">
+             <input name="student_emailaddress" type="email" class="form-control" placeholder="name@example.com" required>
+           </div>
+         </div>
+
+         <div class="form-row div-center">
+           <div class="form-group col-md-4">
+             <label for="inputState">Sex</label>
+             <select name="student_sex" class="form-control">
+                <option selected>Female</option>
+                <option>Male</option>
+                <option>Trans</option>
+             </select>
+           </div>
+           <div class="form-group col-md-4">
+             <label for="inputState">Grade</label>
+             <select name="student_grade" class="form-control">
+                <option selected>First Grade</option>
+                <option>Second Grade</option>
+                <option>Third Grade</option>
+                <option>Fourth Grade</option>
+                <option>Fifth Grade</option>
+                <option>Sixth Grade</option>
+             </select>
+           </div>
+           <div class="form-group col-md-4">
+             <fieldset>
+               <legend>Form Controls:</legend>
+               <button type="submit" class="btn btn-primary mb-2">Submit Update</button>
+               <button type="reset" class="btn mb-2">Clear</button>
+             </fieldset> 
+           </div>
+         </div>
+
+    </form>
+  </div>
 </div>
 
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/form-validate.js') }}"></script>
 </body>
 </html>

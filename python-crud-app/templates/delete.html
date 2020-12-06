@@ -6,6 +6,9 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}" type="text/css">
 </head>
    
 <body>
@@ -28,14 +31,24 @@
   <!--/.Navbar-->
 
   <!-- Main Code -->
-  <div class="jumbotron text-center">
-    <h2 class="display-5">Delete Record</h2>
-    <div class="intro-content">
-      <p>
-        Placeholder for deleteing record.
-      </p>
-    <div>
+  <div class="student-form">
+    <div class="caption-center">
+      <h2 class="display-5">Delete Record</h2>
+    </div>
+    <form action="{{ url_for('delrecord') }}" method="POST">
+         <div class="form-row">
+           <div class="form-group col-md-6">
+             <input name="student_regnum" type="text" class="form-control" placeholder="Student's Registration Number" required>
+           </div>
+           <div class="form-group col-md-6">
+             <button type="submit" class="btn btn-primary mb-2">Submit to Delete Record</button>
+             <button type="reset" class="btn mb-2">Clear</button>
+           </div>
+         </div>
+
+    </form>
   </div>
+
   <!-- End of Main Code -->
 
 </div>

@@ -7,11 +7,21 @@ Run the command below to install package requirements
 pip install -r requirements.txt
 ```
 
+### **Create Database**
+To create the application database, type the command below:
+```
+./db-init.py
+```
+<br>
+
 ### **Test**
 To run this program, type the command below:
 ```
-python crudApp.py
+./python crudApp.py
 ```
+<br>
+
+
 Open your browser and type
 ```
 http://127.0.0.1:6700/

@@ -1,0 +1,6 @@
+com/crudwebapp/model/City.class
+com/crudwebapp/service/ICityService.class
+com/crudwebapp/Application.class
+com/crudwebapp/controller/MyController.class
+com/crudwebapp/service/CityService.class
+com/crudwebapp/repository/CityRepository.class

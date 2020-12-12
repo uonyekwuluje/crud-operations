@@ -14,6 +14,10 @@ INSERT INTO cities(name, population) VALUES('New York', 8550000);
 INSERT INTO cities(name, population) VALUES('Edinburgh', 464000);
 INSERT INTO cities(name, population) VALUES('Berlin', 3671000);
 INSERT INTO cities(name, population) VALUES('Nigeria', 300);
+INSERT INTO cities(name, population) VALUES('South Africa', 12300);
+INSERT INTO cities(name, population) VALUES('Ghana', 3300);
+INSERT INTO cities(name, population) VALUES('India', 356700);
+INSERT INTO cities(name, population) VALUES('Bangalore', 95300);
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'mysqlpassword';
 CREATE USER 'appadmin'@'%' IDENTIFIED BY 'mysqlpassword';

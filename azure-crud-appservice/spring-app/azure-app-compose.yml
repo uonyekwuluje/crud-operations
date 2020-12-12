@@ -1,0 +1,22 @@
+version: "3"
+services:
+  springdbapp:
+    image: uchjappregistry.azurecr.io/springcrudapp:latest
+    ports:
+      - "5000:8080"
+    networks:
+      - crdapp-network
+    depends_on:
+      - mysqldb
+ 
+  mysqldb:
+    image: uchjappregistry.azurecr.io/mysql57-data:latest
+    ports:
+      - "3308:3306"
+    networks:
+      - crdapp-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlpassword
+
+networks:
+  crdapp-network: 
